@@ -5,6 +5,7 @@ namespace OOPGame
 		Up,
 		Down,
 		Left,
-		Right
+		Right,
+		None
 	}
 }

@@ -72,12 +72,28 @@ namespace OOPGame
 		{
 			bool collided = false;
 
-			foreach(GameObject obj in objects)
+			if(
+				tempX - widthHalf < 1 || 
+				tempX + widthHalf > Game.Width - 1 ||
+				tempY - heightHalf < 1 ||
+				tempY + heightHalf > Game.Height - 1
+				)
 			{
-				if(Collide(obj.Position, tempX, tempY))
+				collided = true;
+			}
+
+			if(!collided)
+			{
+				foreach(GameObject obj in objects)
 				{
-					collided = true;
-					break;
+					if(obj.Position != this)
+					{
+						if(Collide(obj.Position, tempX, tempY))
+						{
+							collided = true;
+							break;
+						}
+					}
 				}
 			}
 
