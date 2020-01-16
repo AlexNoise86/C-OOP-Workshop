@@ -7,15 +7,23 @@ namespace OOPGame
 	{
 		private int x;
 		private int y;
+
 		private int width;
 		private int height;
+
+		private int widthHalf;
+		private int heightHalf;
 
 		public Position(int x, int y, int width, int height)
 		{
 			this.x = x;
 			this.y = y;
+
 			this.width = width;
 			this.height = height;
+
+			this.widthHalf = width / 2;
+			this.heightHalf = height / 2;
 		}
 
 		public bool Move(Direction d)
@@ -81,10 +89,17 @@ namespace OOPGame
 			bool collided = false;
 
 			if(
-				tempX > obj.X 
+				tempX + widthHalf > obj.X - obj.WidthHalf &&
+				tempX - widthHalf < obj.X + obj.WidthHalf
 				)
 			{
-
+				if(
+					tempY + heightHalf > obj.Y - obj.HeightHalf &&
+					tempY - heightHalf < obj.Y + obj.HeightHalf
+					)
+				{
+					collided = true;
+				}
 			}
 
 			return collided;
@@ -119,6 +134,22 @@ namespace OOPGame
 			get
 			{
 				return this.height;
+			}
+		}
+
+		public int WidthHalf
+		{
+			get
+			{
+				return this.widthHalf;
+			}
+		}
+
+		public int HeightHalf
+		{
+			get
+			{
+				return this.heightHalf;
 			}
 		}
 	}

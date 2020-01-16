@@ -7,7 +7,22 @@ namespace OOPGame
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			Game.Player = new Player("Hero", new Position(5, 10, 2, 2), ConsoleColor.Green);
+
+			Game.Objects.Add(Game.Player);
+
+
+			while(true)
+			{
+				Graphics.Draw(Game.Objects);
+
+				ConsoleKeyInfo e = Console.ReadKey();
+
+				if(e.Key == ConsoleKey.Escape) break;
+
+				Controller.Controll(e);
+			}
+			
 		}
 	}
 }
