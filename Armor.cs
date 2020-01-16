@@ -2,7 +2,7 @@ using System;
 
 namespace OOPGame
 {
-	class Armor : Item, IWearable
+	public class Armor : Item, IWearable
 	{
 		
 	}

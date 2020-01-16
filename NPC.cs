@@ -2,7 +2,7 @@ using System;
 
 namespace OOPGame
 {
-	class NPC : Character
+	public class NPC : GameObject
 	{
 		
 	}

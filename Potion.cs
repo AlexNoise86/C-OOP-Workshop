@@ -2,7 +2,7 @@ using System;
 
 namespace OOPGame
 {
-	class Potion : Item, IUsable
+	public class Potion : Item, IUsable
 	{
 		
 	}

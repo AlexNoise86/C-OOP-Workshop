@@ -2,7 +2,7 @@ using System;
 
 namespace OOPGame
 {
-	class Meal : Item, IUsable
+	public class Meal : Item, IUsable
 	{
 		
 	}

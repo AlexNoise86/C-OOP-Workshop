@@ -2,7 +2,7 @@ using System;
 
 namespace OOPGame
 {
-	interface IUsable
+	public interface IUsable
 	{
 		
 	}
