@@ -19,7 +19,7 @@ namespace OOPGame
 				Draw(obj);
 			}
 
-			Console.SetCursorPosition(2, Game.Height + 5);
+			Console.SetCursorPosition(0, Game.Height + 1);
 		}
 
 		public static void Draw(GameObject obj)
