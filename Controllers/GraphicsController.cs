@@ -62,9 +62,7 @@ namespace OOPGame
 				Console.WriteLine(items[i].Name);
 			}
 			
-
-
-
+			Console.ForegroundColor = ConsoleColor.Gray;
 		}
 
 		public static void DrawBattle()

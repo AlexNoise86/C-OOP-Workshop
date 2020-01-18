@@ -9,5 +9,10 @@ namespace OOPGame
 		{
 
 		}
+
+		public void Wear(Player p)
+		{
+
+		}
 	}
 }

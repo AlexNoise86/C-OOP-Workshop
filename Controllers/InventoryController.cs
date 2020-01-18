@@ -24,7 +24,7 @@ namespace OOPGame
 					break;	
 
 				case ConsoleKey.E:
-					Use(Game.Selection);
+					Game.Player.Use(Game.Selection);
 					break;
 
 				case ConsoleKey.Escape:
@@ -32,11 +32,6 @@ namespace OOPGame
 					break;
 			}	
 
-			
-		}
-
-		private static void Use(int index)
-		{
 			
 		}
 

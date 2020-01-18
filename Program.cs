@@ -24,10 +24,10 @@ namespace OOPGame
 			Game.Objects.Add(new NPC("Enemy 5", new Position(40, 3, 2, 2), ConsoleColor.Gray));
 
 
-			Game.Player.Inventory.Add(new Item("Potion"));
-			Game.Player.Inventory.Add(new Item("Armor"));
-			Game.Player.Inventory.Add(new Item("Weapon"));
-			Game.Player.Inventory.Add(new Item("Meal"));
+			Game.Player.Inventory.Add(new Potion("Estus", 50));
+			Game.Player.Inventory.Add(new Armor("Chain Mail"));
+			Game.Player.Inventory.Add(new Weapon("Steel Sword"));
+			Game.Player.Inventory.Add(new Meal("Sweetroll", 10));
 		}
 
 		static void Update()
