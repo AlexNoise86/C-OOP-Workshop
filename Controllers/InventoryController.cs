@@ -10,14 +10,22 @@ namespace OOPGame
 			switch(e.Key)
 			{
 				case ConsoleKey.UpArrow:
-
-					
+					if(Game.Selection != 0)
+					{
+						Game.Selection--;
+					}
 					break;
 
 				case ConsoleKey.DownArrow:
-					
-
+					if(Game.Selection < Game.Player.Inventory.Count - 1)
+					{
+						Game.Selection++;
+					}
 					break;	
+
+				case ConsoleKey.E:
+					
+					break;
 			}	
 
 			

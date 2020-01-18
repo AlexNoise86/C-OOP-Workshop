@@ -26,10 +26,9 @@ namespace OOPGame
 
 		static void Update()
 		{
-			bool play = true;
 			ConsoleKeyInfo e;
 
-			while(play)
+			while(Game.Play)
 			{
 				switch(Game.Mode)
 				{
@@ -37,28 +36,6 @@ namespace OOPGame
 						GraphicsController.Draw(Game.Objects);
 
 						e = Console.ReadKey();
-
-						if(e.Key == ConsoleKey.Escape) 
-						{
-							Console.SetCursorPosition(0, Game.Height + 1);
-							Console.WriteLine("Are you sure you want to exit? (y/n)");
-
-							e = Console.ReadKey();
-
-							if(e.Key == ConsoleKey.Y)
-							{
-								play = false;
-							}
-							
-							break;
-						}
-
-						if(e.Key == ConsoleKey.I) 
-						{
-							InventoryController.Open();
-
-							break;
-						}
 
 						LocationController.Controll(e);
 						break;
