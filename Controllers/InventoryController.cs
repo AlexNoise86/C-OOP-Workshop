@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace OOPGame
 {
-	public static class Controller
+	public static class InventoryController
 	{
 		public static void Controll(ConsoleKeyInfo e)
 		{
@@ -32,7 +32,7 @@ namespace OOPGame
 
 			if(d != Direction.None)
 			{
-				Game.Objects[0].Position.Move(d);
+				Game.Player.Position.Move(d);
 			}
 		}
 

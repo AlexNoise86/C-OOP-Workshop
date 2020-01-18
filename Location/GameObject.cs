@@ -4,7 +4,7 @@ namespace OOPGame
 {
 	public class GameObject
 	{
-		public static char Symbol = '+';
+		public static char Symbol = '#';
 		private string name;
 
 		private Position position;

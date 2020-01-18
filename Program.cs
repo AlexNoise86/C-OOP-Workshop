@@ -13,38 +13,65 @@ namespace OOPGame
 
 		static void InitGame()
 		{
-			Game.Player = new Player("Hero", new Position(5, 10, 2, 2), ConsoleColor.Blue);
+			Game.Player = new Player("Hero", new Position(5, 10, 2, 2), ConsoleColor.White);
 
 			Game.Objects.Add(Game.Player);
 
 			Game.Objects.Add(new NPC("Enemy 1", new Position(10, 10, 2, 2), ConsoleColor.Red));
-			Game.Objects.Add(new NPC("Enemy 2", new Position(15, 10, 2, 2), ConsoleColor.Red));
-			Game.Objects.Add(new NPC("Friend 1", new Position(20, 10, 2, 2), ConsoleColor.Green));
-			Game.Objects.Add(new NPC("Friend 2", new Position(10, 20, 2, 2), ConsoleColor.Green));
+			Game.Objects.Add(new NPC("Enemy 2", new Position(15, 10, 2, 2), ConsoleColor.Blue));
+			Game.Objects.Add(new NPC("Enemy 3", new Position(25, 20, 2, 2), ConsoleColor.Yellow));
+			Game.Objects.Add(new NPC("Enemy 4", new Position(35, 5, 2, 2), ConsoleColor.Green));
+			Game.Objects.Add(new NPC("Enemy 5", new Position(40, 3, 2, 2), ConsoleColor.Gray));
 		}
 
 		static void Update()
 		{
 			bool play = true;
+			ConsoleKeyInfo e;
 
 			while(play)
 			{
-
-
-				switch(Game.GameMode)
+				switch(Game.Mode)
 				{
 					case GameMode.Location:
-						Graphics.Draw(Game.Objects);
+						GraphicsController.Draw(Game.Objects);
 
-						ConsoleKeyInfo e = Console.ReadKey();
+						e = Console.ReadKey();
 
-						if(e.Key == ConsoleKey.Escape) play = false;
+						if(e.Key == ConsoleKey.Escape) 
+						{
+							Console.SetCursorPosition(0, Game.Height + 1);
+							Console.WriteLine("Are you sure you want to exit? (y/n)");
 
-						Controller.Controll(e);
+							e = Console.ReadKey();
+
+							if(e.Key == ConsoleKey.Y)
+							{
+								play = false;
+							}
+							
+							break;
+						}
+
+						if(e.Key == ConsoleKey.I) 
+						{
+							Game.Mode = GameMode.Inventory;
+
+							break;
+						}
+
+						LocationController.Controll(e);
 						break;
 
 					case GameMode.Inventory:
-						Graphics.DrawInventory();
+						GraphicsController.DrawInventory();
+
+						e = Console.ReadKey();
+
+						if(e.Key == ConsoleKey.Escape) Game.Mode = GameMode.Location;
+
+						InventoryController.Controll(e);
+
 
 						Console.ReadLine();
 						break;

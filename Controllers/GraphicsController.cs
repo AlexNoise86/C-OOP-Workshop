@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace OOPGame
 {
-	public static class Graphics
+	public static class GraphicsController
 	{
 		public static string TopLine = "";
 		public static string MidLine = "";
