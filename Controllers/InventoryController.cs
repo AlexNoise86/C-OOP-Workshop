@@ -7,33 +7,42 @@ namespace OOPGame
 	{
 		public static void Controll(ConsoleKeyInfo e)
 		{
-			Direction d = Direction.None;
-
 			switch(e.Key)
 			{
 				case ConsoleKey.UpArrow:
-					d = Direction.Up;
+
+					
 					break;
 
 				case ConsoleKey.DownArrow:
-					d = Direction.Down;
-					break;
+					
 
-				case ConsoleKey.LeftArrow:
-					d = Direction.Left;
-					break;
-
-				case ConsoleKey.RightArrow:
-					d = Direction.Right;
-					break;				
-			}
+					break;	
+			}	
 
 			
+		}
 
-			if(d != Direction.None)
+		public static void Open()
+		{
+			if(Game.Player.Inventory.Count > 0)
 			{
-				Game.Player.Position.Move(d);
+				Game.Mode = GameMode.Inventory;
+				Game.Selection = 0;
 			}
+			else
+			{
+				Console.SetCursorPosition(0, Game.Height + 1);
+
+				Console.WriteLine("Your inventory is empty! \nPress any key to continue...");
+				Console.ReadKey();
+			}
+		}
+
+		public static void Close()
+		{
+			Game.Selection = -1;
+			Game.Mode = GameMode.Location;
 		}
 
 	}

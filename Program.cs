@@ -55,7 +55,7 @@ namespace OOPGame
 
 						if(e.Key == ConsoleKey.I) 
 						{
-							Game.Mode = GameMode.Inventory;
+							InventoryController.Open();
 
 							break;
 						}
@@ -64,7 +64,7 @@ namespace OOPGame
 						break;
 
 					case GameMode.Inventory:
-						GraphicsController.DrawInventory();
+						GraphicsController.DrawInventory(Game.Player.Inventory);
 
 						e = Console.ReadKey();
 

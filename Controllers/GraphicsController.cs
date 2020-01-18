@@ -41,9 +41,12 @@ namespace OOPGame
 			}
 		}
 
-		public static void DrawInventory()
+		public static void DrawInventory(List<Item> items)
 		{
+			Console.Clear();
+
 			
+
 		}
 
 		public static void DrawBattle()
