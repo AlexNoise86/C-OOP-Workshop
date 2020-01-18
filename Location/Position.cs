@@ -14,6 +14,8 @@ namespace OOPGame
 		private int widthHalf;
 		private int heightHalf;
 
+		private Direction direction;
+
 		public Position(int x, int y, int width, int height)
 		{
 			this.x = x;
@@ -24,12 +26,16 @@ namespace OOPGame
 
 			this.widthHalf = width / 2;
 			this.heightHalf = height / 2;
+
+			direction = Direction.Up;
 		}
 
 		public bool Move(Direction d)
 		{
 			int dX = 0;
 			int dY = 0;
+
+			direction = d;
 
 			switch(d)
 			{
@@ -68,7 +74,7 @@ namespace OOPGame
 			}
 		}
 
-		public bool Collide(List<GameObject> objects, int tempX, int tempY)
+		public bool Collide(List<GameObject> objects, int tempX, int tempY, GameObject collidedObj = null)
 		{
 			bool collided = false;
 
@@ -91,6 +97,7 @@ namespace OOPGame
 						if(Collide(obj.Position, tempX, tempY))
 						{
 							collided = true;
+							collidedObj = obj;
 							break;
 						}
 					}
@@ -166,6 +173,14 @@ namespace OOPGame
 			get
 			{
 				return this.heightHalf;
+			}
+		}
+
+		public Direction Direction 
+		{
+			get
+			{
+				return this.direction;
 			}
 		}
 	}

@@ -13,6 +13,11 @@ namespace OOPGame
 		private int hpFull;
 		private int hp;
 
+		public GameObject()
+		{
+
+		}
+
 		public GameObject(string name, Position position, ConsoleColor color)
 		{
 			this.name = name;
@@ -33,6 +38,7 @@ namespace OOPGame
 		public void TakeDamage(int dmg)
 		{
 			this.hp -= dmg;
+			Console.Beep();
 
 			if(hp <= 0)
 			{
@@ -40,9 +46,12 @@ namespace OOPGame
 			}
 		}
 
-		public void Die()
+		private void Die()
 		{
-
+			Console.WriteLine($"{this.Name} died");
+			Console.Beep();
+			Console.ReadKey();
+			Game.Objects.Remove(this);
 		}
 
 		public string Name

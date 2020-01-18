@@ -27,6 +27,45 @@ namespace OOPGame
 					d = Direction.Right;
 					break;
 
+				case ConsoleKey.A:
+					NPC obj = new NPC();
+
+					int dY = 0;
+					int dX = 0;
+
+					switch(Game.Player.Position.Direction)
+					{
+						case Direction.Up:
+							dY = -1;
+							break;
+
+						case Direction.Down:
+							dY = 1;
+							break;
+
+						case Direction.Left:
+							dX = -1;
+							break;
+
+						case Direction.Right:
+							dX = 1;
+							break;
+					}
+
+					int tempX = Game.Player.Position.X + dX;
+					int tempY = Game.Player.Position.Y + dY;
+
+					bool collided = Game.Player.Position.Collide(Game.Objects, tempX, tempY, obj);
+
+					if(collided)
+					{
+						if(obj != null)
+						{
+							Game.Player.Attack(obj);
+						}
+					}
+					break;
+
 				case ConsoleKey.Escape:
 					Console.SetCursorPosition(0, Game.Height + 1);
 					Console.WriteLine("Are you sure you want to exit? (y/n)");

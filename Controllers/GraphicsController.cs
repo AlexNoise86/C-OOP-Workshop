@@ -16,7 +16,10 @@ namespace OOPGame
 
 			foreach(GameObject obj in objects)
 			{
-				Draw(obj);
+				if(obj.HP > 0)
+				{
+					Draw(obj);
+				}
 			}
 
 			Console.SetCursorPosition(0, Game.Height + 1);
@@ -29,9 +32,31 @@ namespace OOPGame
 
 			string width = "";
 
+			char symbol = ' ';
+
+			switch(obj.Position.Direction)
+			{
+				case Direction.Up:
+					symbol = '↑';
+					break;
+
+				case Direction.Down:
+					symbol = '↓';
+					break;
+
+				case Direction.Left:
+					symbol = '←';	
+					break;
+
+				case Direction.Right:
+					symbol = '→';
+					break;
+			}
+
 			for(int i = 0; i < obj.Position.Width; i++)
 			{
-				width += GameObject.Symbol;
+
+				width += symbol;
 			}
 
 			for(int i = 0; i < obj.Position.Height; i++)
@@ -61,7 +86,7 @@ namespace OOPGame
 
 				Console.WriteLine(items[i].Name);
 			}
-			
+
 			Console.ForegroundColor = ConsoleColor.Gray;
 		}
 
