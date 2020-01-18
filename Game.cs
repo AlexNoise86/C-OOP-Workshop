@@ -11,6 +11,11 @@ namespace OOPGame
 		public const int Width = 100;
 		public const int Height = 25;
 
+		public static GameMode GameMode = GameMode.Location;
+
+		public static int Selection = -1;
+
+
 
 		
 	}

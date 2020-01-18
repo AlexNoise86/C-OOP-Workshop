@@ -28,6 +28,8 @@ namespace OOPGame
 					break;				
 			}
 
+			
+
 			if(d != Direction.None)
 			{
 				Game.Objects[0].Position.Move(d);

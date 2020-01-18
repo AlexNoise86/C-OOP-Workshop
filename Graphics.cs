@@ -41,6 +41,16 @@ namespace OOPGame
 			}
 		}
 
+		public static void DrawInventory()
+		{
+			
+		}
+
+		public static void DrawBattle()
+		{
+			
+		}
+
 		public static void DrawBorder()
 		{
 			Console.ForegroundColor = ConsoleColor.White;
