@@ -25,6 +25,7 @@ namespace OOPGame
 
 				case ConsoleKey.E:
 					Game.Player.Use(Game.Selection);
+					Game.Selection = 0;
 					break;
 
 				case ConsoleKey.Escape:

@@ -25,11 +25,8 @@ namespace OOPGame
 			{
 				IUsable item = inventory[index] as IUsable;
 				item.Use(this);
-			}
-			else if(inventory[index] is IWearable)
-			{
-				IWearable item = inventory[index] as IWearable;
-				item.Wear(this);
+
+				inventory.RemoveAt(index);
 			}
 			else
 			{
