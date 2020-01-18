@@ -24,10 +24,19 @@ namespace OOPGame
 					break;	
 
 				case ConsoleKey.E:
-					
+					Use(Game.Selection);
+					break;
+
+				case ConsoleKey.Escape:
+					Close();
 					break;
 			}	
 
+			
+		}
+
+		private static void Use(int index)
+		{
 			
 		}
 

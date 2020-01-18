@@ -22,6 +22,12 @@ namespace OOPGame
 			Game.Objects.Add(new NPC("Enemy 3", new Position(25, 20, 2, 2), ConsoleColor.Yellow));
 			Game.Objects.Add(new NPC("Enemy 4", new Position(35, 5, 2, 2), ConsoleColor.Green));
 			Game.Objects.Add(new NPC("Enemy 5", new Position(40, 3, 2, 2), ConsoleColor.Gray));
+
+
+			Game.Player.Inventory.Add(new Item("Potion"));
+			Game.Player.Inventory.Add(new Item("Armor"));
+			Game.Player.Inventory.Add(new Item("Weapon"));
+			Game.Player.Inventory.Add(new Item("Meal"));
 		}
 
 		static void Update()
@@ -48,9 +54,6 @@ namespace OOPGame
 						if(e.Key == ConsoleKey.Escape) Game.Mode = GameMode.Location;
 
 						InventoryController.Controll(e);
-
-
-						Console.ReadLine();
 						break;
 
 					case GameMode.Battle:

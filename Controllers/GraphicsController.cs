@@ -45,7 +45,25 @@ namespace OOPGame
 		{
 			Console.Clear();
 
+			Console.SetCursorPosition(0, 0);
+
+			Console.ForegroundColor = ConsoleColor.Green;
+			Console.WriteLine("Inventory");
+
+			for(int i = 0; i < items.Count; i++)
+			{
+				Console.ForegroundColor = ConsoleColor.Gray;
+
+				if(i == Game.Selection)
+				{
+					Console.ForegroundColor = ConsoleColor.Blue;
+				}
+
+				Console.WriteLine(items[i].Name);
+			}
 			
+
+
 
 		}
 
