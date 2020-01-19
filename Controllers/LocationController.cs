@@ -33,7 +33,7 @@ namespace OOPGame
 					int dY = 0;
 					int dX = 0;
 
-					switch(Game.Player.Position.Direction)
+					switch(Game.Player.Position.Direction) 
 					{
 						case Direction.Up:
 							dY = -1;
