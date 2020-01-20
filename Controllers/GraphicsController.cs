@@ -64,6 +64,8 @@ namespace OOPGame
 				Console.SetCursorPosition(obj.Position.X - obj.Position.WidthHalf, obj.Position.Y - obj.Position.HeightHalf + i);
 				Console.Write(width);
 			}
+
+			Console.ForegroundColor = ConsoleColor.White;
 		}
 
 		public static void DrawInventory(List<Item> items)
@@ -90,11 +92,6 @@ namespace OOPGame
 			Console.ForegroundColor = ConsoleColor.Gray;
 		}
 
-		public static void DrawBattle()
-		{
-			
-		}
-
 		public static void DrawBorder()
 		{
 			Console.ForegroundColor = ConsoleColor.White;
@@ -112,6 +109,8 @@ namespace OOPGame
 					Console.WriteLine(MidLine);
 				}
 			}
+
+			Console.WriteLine(Game.Player.Health);
 		}
 
 		private static void InitLines()

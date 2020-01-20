@@ -27,7 +27,7 @@ namespace OOPGame
 			this.color = color;
 
 			hpFull = 100;
-			hp = hpFull;
+			hp = 80;
 		}
 
 		public void Attack(GameObject obj)
@@ -112,7 +112,7 @@ namespace OOPGame
 		{
 			get
 			{
-				double p = this.hpFull / this.hp * 100;
+				double p = (double)this.hp / (double)this.hpFull * 100;
 				return $"{p}%";
 			}
 		}
