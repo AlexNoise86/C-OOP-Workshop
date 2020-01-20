@@ -74,37 +74,50 @@ namespace OOPGame
 			}
 		}
 
-		public bool Collide(List<GameObject> objects, int tempX, int tempY, GameObject collidedObj = null)
+		public GameObject GetCollision(List<GameObject> objects, int tempX, int tempY)
 		{
-			bool collided = false;
+			GameObject obj = null;
 
-			if(
-				tempX - widthHalf < 1 || 
-				tempX + widthHalf > Game.Width - 1 ||
-				tempY - heightHalf < 1 ||
-				tempY + heightHalf > Game.Height - 1
-				)
+			for(int i = 0; i < objects.Count; i++)
 			{
-				collided = true;
-			}
-
-			if(!collided)
-			{
-				foreach(GameObject obj in objects)
+				if(objects[i].Position != this)
 				{
-					if(obj.Position != this)
+					if(Collide(objects[i].Position, tempX, tempY))
 					{
-						if(Collide(obj.Position, tempX, tempY))
-						{
-							collided = true;
-							collidedObj = obj;
-							break;
-						}
+						obj = objects[i];
+						break;
 					}
 				}
 			}
 
-			return collided;
+			return obj;
+		}
+
+		public bool Collide(List<GameObject> objects, int tempX, int tempY)
+		{
+			GameObject obj = GetCollision(objects, tempX, tempY);
+			
+			if(obj == null)
+			{
+				if(
+					tempX - widthHalf < 1 || 
+					tempX + widthHalf > Game.Width - 1 ||
+					tempY - heightHalf < 1 ||
+					tempY + heightHalf > Game.Height - 1
+					)
+				{
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+				
+			}
+			else
+			{
+				return true;
+			}
 		}
 
 		public bool Collide(Position obj, int tempX, int tempY)

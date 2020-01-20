@@ -2,7 +2,7 @@ using System;
 
 namespace OOPGame
 {
-	public abstract class GameObject
+	public class GameObject
 	{
 		public static char Symbol = '#';
 		private string name;

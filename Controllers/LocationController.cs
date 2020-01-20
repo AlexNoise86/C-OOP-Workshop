@@ -28,7 +28,7 @@ namespace OOPGame
 					break;
 
 				case ConsoleKey.A:
-					NPC obj = new NPC();
+					GameObject obj = null;
 
 					int dY = 0;
 					int dX = 0;
@@ -55,14 +55,11 @@ namespace OOPGame
 					int tempX = Game.Player.Position.X + dX;
 					int tempY = Game.Player.Position.Y + dY;
 
-					bool collided = Game.Player.Position.Collide(Game.Objects, tempX, tempY, obj);
+					obj = Game.Player.Position.GetCollision(Game.Objects, tempX, tempY);
 
-					if(collided)
+					if(obj != null)
 					{
-						if(obj != null)
-						{
-							Game.Player.Attack(obj);
-						}
+						Game.Player.Attack(obj);
 					}
 					break;
 
