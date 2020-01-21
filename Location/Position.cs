@@ -11,8 +11,8 @@ namespace OOPGame
 		private int width;
 		private int height;
 
-		private int widthHalf;
-		private int heightHalf;
+		private double widthHalf;
+		private double heightHalf;
 
 		private Direction direction;
 
@@ -24,8 +24,8 @@ namespace OOPGame
 			this.width = width;
 			this.height = height;
 
-			this.widthHalf = width / 2;
-			this.heightHalf = height / 2;
+			this.widthHalf = (double)width / 2.0;
+			this.heightHalf = (double)height / 2.0;
 
 			direction = Direction.Up;
 		}
@@ -173,7 +173,7 @@ namespace OOPGame
 			}
 		}
 
-		public int WidthHalf
+		public double WidthHalf
 		{
 			get
 			{
@@ -181,7 +181,7 @@ namespace OOPGame
 			}
 		}
 
-		public int HeightHalf
+		public double HeightHalf
 		{
 			get
 			{

@@ -4,7 +4,6 @@ namespace OOPGame
 {
 	public class GameObject
 	{
-		public static char Symbol = '#';
 		private string name;
 
 		private Position position;
@@ -38,7 +37,10 @@ namespace OOPGame
 		public void TakeDamage(int dmg)
 		{
 			this.hp -= dmg;
+			Console.WriteLine($"\n{this.Name} has taken {dmg} damage points!");
 			Console.Beep();
+
+			Console.ReadKey();
 
 			if(hp <= 0)
 			{
@@ -48,12 +50,30 @@ namespace OOPGame
 
 		private void Die()
 		{
-			Console.WriteLine($"{this.Name} died");
+			Console.WriteLine($"\n{this.Name} died");
+			
 			Console.Beep();
 			Console.ReadKey();
+			
 			Game.Objects.Remove(this);
 		}
 
+
+
+		public void Heal(int val)
+		{
+			if(hp + val > hpFull)
+			{
+				val = val - (hp + val - hpFull);
+			}
+
+			hp += val;
+
+			Console.WriteLine($"\n{name} healed {val} HP!");
+			Console.WriteLine("Press any key to continue...");
+			Console.ReadKey();
+		}
+	
 		public string Name
 		{
 			get
@@ -76,20 +96,6 @@ namespace OOPGame
 			{
 				return this.color;
 			}
-		}
-
-		public void Heal(int val)
-		{
-			if(hp + val > hpFull)
-			{
-				val = val - (hp + val - hpFull);
-			}
-
-			hp += val;
-
-			Console.WriteLine($"\n{name} healed {val} HP!");
-			Console.WriteLine("Press any key to continue...");
-			Console.ReadKey();
 		}
 
 		public int HP 

@@ -27,7 +27,7 @@ namespace OOPGame
 
 		public static void Draw(GameObject obj)
 		{
-			Console.SetCursorPosition(obj.Position.X - obj.Position.WidthHalf, obj.Position.Y - obj.Position.HeightHalf);
+			Console.SetCursorPosition(obj.Position.X - (int)obj.Position.WidthHalf, obj.Position.Y - (int)obj.Position.HeightHalf);
 			Console.ForegroundColor = obj.Color;
 
 			string width = "";
@@ -61,7 +61,7 @@ namespace OOPGame
 
 			for(int i = 0; i < obj.Position.Height; i++)
 			{
-				Console.SetCursorPosition(obj.Position.X - obj.Position.WidthHalf, obj.Position.Y - obj.Position.HeightHalf + i);
+				Console.SetCursorPosition(obj.Position.X - (int)obj.Position.WidthHalf, obj.Position.Y - (int)obj.Position.HeightHalf + i);
 				Console.Write(width);
 			}
 

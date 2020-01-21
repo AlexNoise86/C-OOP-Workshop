@@ -17,7 +17,7 @@ namespace OOPGame
 
 			Game.Objects.Add(Game.Player);
 
-			Game.Objects.Add(new NPC("Enemy 1", new Position(10, 10, 2, 2), ConsoleColor.Red));
+			Game.Objects.Add(new NPC("Enemy 1", new Position(10, 10, 3, 2), ConsoleColor.Red));
 			Game.Objects.Add(new NPC("Enemy 2", new Position(15, 10, 2, 2), ConsoleColor.Blue));
 			Game.Objects.Add(new NPC("Enemy 3", new Position(25, 20, 2, 2), ConsoleColor.Yellow));
 			Game.Objects.Add(new NPC("Enemy 4", new Position(35, 5, 2, 2), ConsoleColor.Green));
@@ -45,24 +45,20 @@ namespace OOPGame
 						LocationController.Controll(e);
 						break;
 
-					case GameMode.Inventory:
+						case GameMode.Inventory:
 
-						if(Game.Player.Inventory.Count == 0)
-						{
-							InventoryController.Close();
+							if(Game.Player.Inventory.Count == 0)
+							{
+								InventoryController.Close();
+								break;
+							}
+
+							GraphicsController.DrawInventory(Game.Player.Inventory);
+
+							e = Console.ReadKey();
+
+							InventoryController.Controll(e);
 							break;
-						}
-
-						GraphicsController.DrawInventory(Game.Player.Inventory);
-
-						e = Console.ReadKey();
-
-						InventoryController.Controll(e);
-						break;
-
-					case GameMode.Battle:
-
-						break;
 				}
 
 				

@@ -15,9 +15,6 @@ namespace OOPGame
 
 		public static GameMode Mode = GameMode.Location;
 
-		public static int Selection = -1;
-
-
-		
+		public static int Selection = -1;	
 	}
 }
