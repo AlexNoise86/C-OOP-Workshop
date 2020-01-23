@@ -11,7 +11,7 @@ namespace OOPGame
 		public static Player Player;
 
 		public const int Width = 100;
-		public const int Height = 25;
+		public const int Height = 25; 
 
 		public static GameMode Mode = GameMode.Location;
 
